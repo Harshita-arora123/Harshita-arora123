@@ -25,3 +25,14 @@ const myObj = {   // object type in {}
     age:19,
 }
 
+
+const myFunction = function () {
+    console.log("hyy world");
+}
+
+console.log(typeof bigNumber);
+/*console.log(typeof outsideTemp);
+console.log(typeof scoreValue);
+console.log(typeof heros);
+console.log(typeof myFunction);              object function
+console.log(typeof anotherId) */
