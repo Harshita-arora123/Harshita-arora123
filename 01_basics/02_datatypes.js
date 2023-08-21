@@ -1,4 +1,4 @@
-"use strict";  // treat all js code as newer version
+/*"use strict";  // treat all js code as newer version
 
 //alert(3+3) // we  r using nodejs , not browser    alert not run on node js
 
@@ -24,7 +24,6 @@ let isLoggedIn = false
 console.log(typeof "hitesh")
 console.log(typeof age)              // number
 console.log(typeof null)               // object
-console.log(typeof undefined)          // undefined
-
+console.log(typeof undefined)          // undefined */
 
 
