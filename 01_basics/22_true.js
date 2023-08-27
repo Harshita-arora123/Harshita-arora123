@@ -32,10 +32,19 @@ false == ''   // true
 // nullish coalescing operator (??) : null & undefined
 //logical operator that returns its RHS operand when its LHS operand is null or undefined, and otherwise returns its LHS operand.
   //null or undefined ho tb ryt value print  otherwise left print
-  
-let val1;
- //val1 = 5 ?? 10
- val1 = null ?? 10     
- //val1 = undefined ?? 15
-// val1 = null ?? 10 ?? 20
 
+ let val1;
+
+ val1 = 5 ?? 10
+  //val1 = null ?? 10     
+ //val1 = undefined ?? 15   
+// val1 = null ?? 10 ?? 20    
+
+//console.log(val1);
+
+
+// ternary operator 
+// condition ?  true: false
+
+const iceTeaPrice  = 100 
+iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80");
