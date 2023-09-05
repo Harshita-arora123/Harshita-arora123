@@ -1,0 +1,39 @@
+<!-- js is synchronous (seriel wise run) & single threaded (sometime slowly )
+
+    blocking code  (synchronous)   V/S  non blocking code  (asynchronous) -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>async js</title>
+        <button id="stop"> stop </button>
+    </head>
+    <body>
+    <script>
+       /* setTimeout(function () {
+           console.log("harshita"); 
+        },2000) */
+    
+        const sayhappy = function(){
+            console.log("harshit");
+        }
+    
+        const changeText = function(){              // harshita se best js series  aajata but it code not work
+            document.querySelector('h1').
+            innerHTML = "best js series"
+        }
+       // setTimeout(sayhappy, 2000)
+        //setTimeout(changeText, 2000)          not show on web page 
+    
+     const changeMe = setTimeout(changeText, 2000)   
+     document.querySelector('#stop'). 
+     addEventListener('click',function() {
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+     })
+      
+    </script>
+    </body>
+    </html>
