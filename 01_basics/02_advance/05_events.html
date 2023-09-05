@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color:  #414141; color: aliceblue;">
+    <h2>amazing image</h2>
+    <div>
+     <ul id="images">
+    <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+    <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+    <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+                </ul>
+           </div>
+        </ul>
+    </div>
+</body>
+<script>
+   /*document.getElementById("owl").onclick = function () {    // is approach me feature km h not use
+         alert("owl clicked")
+   } */
+
+   // attachevent()
+// jquery - on            ye phle use hote the
+
+   /*document.getElementById("owl").addEventListener('click',function () {
+    alert("owl clicked")
+   })  */
+
+      // type, timestamp, defaultPrevented  ( anchor tag etc defaultprevented apne ap nhi ayenge )
+      // target, toelement , srcelement , currentTarget
+      // clientX, clientY, screenX , screenY
+      // altkey , ctrlkey , shiftkey , keycode(used in projects)
+
+   /*document.getElementById("owl").addEventListener('click',function (e){
+        console.log(e);
+   },false)   */ 
+
+ // false default hota h true can also use but it gives same result.  
+   //Bubbling and Capturing are the two methods of event propagation. Bubbling travels from the target to the root, and capturing travels from the root to the target.
+
+  /* document.getElementById("images").addEventListener('click',function (e){
+        console.log("click inside the ul");
+   },false)   
+   document.getElementById("owl").addEventListener('click',function (e){
+        console.log("owl clicked");   
+   },false)   // false likho ya na likho defaulted       owl clicked phle then click inside    bottom to top
+ */
+
+   /*document.getElementById("images").addEventListener('click',function (e){
+        console.log("click inside the ul");
+   },true)    
+
+   document.getElementById("owl").addEventListener('click',function (e){
+        console.log("owl clicked");  
+        e.stopPropagation()        // only owl clicked ayega  stop bubbling
+   },true)    */                   // true me      click inside phle then owl clicked            top to bottom
+
+  /*document.getElementById("google").addEventListener
+  ("click",function (e) {
+     e.preventDefault()         // google pe click hone se kuch ni hoga bcz preventdefault  only google clicked 
+     e.stopPropagation()        // prevent from bubbling    top to bottom            
+     console.log("google clicked"); 
+  })  */
+
+ /* document.querySelector("#images").addEventListener('click',function(e){
+      console.log(e.target.parentNode);     // parentnode excess 
+      let removeIt = e.target.parentNode
+      //removeIt.remove()                                 // 1st method
+      //removeIt.parentNode.removeChild(removeIt)   //2nd method   parent access child & then remove it
+}) */
+
+document.querySelector("#images").addEventListener('click',function(e){
+      console.log(e.target.tagName);    
+      if (e.target.tagName=== 'IMG') {
+console.log(e.target.id);                  // img id show when click
+      let removeIt = e.target.parentNode
+      removeIt.remove()                               
+      }
+})
+
+</script>
+</html>
