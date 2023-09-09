@@ -12,5 +12,3 @@ accountCity = "delhi"
 console.log(accountId)
 // prefer not to use var bcz of issue in block space & functional space
 console.table([accountId,accountEmail,accountPassword,accountCity,accountState])  */     //console.table is used to print all variables collectively
-
-
