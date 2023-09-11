@@ -12,3 +12,20 @@ accountCity = "delhi"
 console.log(accountId)
 // prefer not to use var bcz of issue in block space & functional space
 console.table([accountId,accountEmail,accountPassword,accountCity,accountState])  */     //console.table is used to print all variables collectively
+
+// class user
+const User = {
+    _email :'h@hc.com',        // _underscore k bad private properties bnjati h not access by user easily
+    _password : "abc",
+
+          get email(){
+          return this._email.toUpperCase()  
+        },
+
+        set email(value){
+            this._email= value
+        }
+    }
+
+    const tea= Object.create(User)
+    console.log(tea.email);

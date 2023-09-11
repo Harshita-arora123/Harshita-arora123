@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    
+</body>
+<script>
+  /* function init() {
+        let name = "Mozilla";
+     function displayName() {
+        console.log(name);                 // log bhar hota global scope me then not access d value  
+  }
+  displayName();
+}
+init(); */
+
+/*function outer() {
+    let username = "happy"
+    function inner(){
+      console.log("inner",username);    // print block scope
+    }
+   inner() 
+}                                          // share memory
+ outer()                                 // not print global scope
+ console.log("Too OUTER", username); */
+
+ // fun k andr ka func.  (lexical scoping)  to resolve the variable names when a function is created inside another function.
+
+ function outer() {
+    let username = "happy"
+      console.log("OUTER",secret);        // secret not access  bcz bde choto ko access ni kr skte
+
+function inner(){                           // fun k andr fun that is lexical scoping
+    let secret = "my123"
+       console.log("inner",username);         // inner   
+    }
+    function innerTwo(){
+        console.log("innerTwo",username);    // innertwo print 
+    }
+   inner() 
+   innerTwo()  
+}                                        
+ outer()                                 
+ console.log("Too OUTER", username);
+
+
+ // closure  a closure gives you access to an outer function's scope from an inner function
+
+ function makeFunc() {
+      const name = "Mozilla";       // closure return lexical scope of function
+  function displayName() {
+     console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+
+</script>
+<script>
+   /*document.getElementById("orange").onclick = function(){
+    document.body.style.backgroundColor = `orange`         // use backticks ``
+   }
+   document.getElementById("green").onclick = function(){
+    document.body.style.backgroundColor = `green`
+   } */
+
+   // lexical scope & closure method to use click on orange & green color
+  
+   function clickHandler(color) {
+    //document.body.style.backgroundColor = `${color}`   // agr color ka access return fun me na hota toh not work  eg. color ki jgh colors hota then not work fun bcz not access
+
+     return function(){
+        document.body.style.backgroundColor = `${color}`   // access lexical scope & return fun
+     }
+    
+   }
+
+   document.getElementById("orange").onclick = clickHandler("orange")
+   document.getElementById("green").onclick = clickHandler("green")
+</script>
+</html>          

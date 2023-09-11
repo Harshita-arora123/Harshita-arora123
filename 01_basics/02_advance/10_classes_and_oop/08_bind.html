@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    // bind used previously in react
+    class React{
+        constructor(){
+           this.library = "React"                      // obj create hote hi niche reference
+           this.server = "https://localhost:300"
+                                                   // reference mil jaye obj ka or button click hojaye
+            // requirement            reference mil gya              
+            document
+                    .querySelector('button')
+                    .addEventListener('click',this.handleClick.bind(this))    // bind (this) attach all reference of this  & new eg of react            hndlclick ka ref nhi h so use this                                 
+        }                                                       // bind se access mil gya sbhi ka
+        handleClick(){
+            console.log("button clicked");
+            //console.log(this.server);  
+            console.log(this)   
+        }
+    }
+
+     const app = new React()                
+</script>
+</html>
